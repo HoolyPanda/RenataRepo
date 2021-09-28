@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13966, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SampleScene
+  m_EditorClassIdentifier: 
+  templateScene: {fileID: 102900000, guid: c8347d4e637e7ce4e8c749c6baec58bc, type: 3}
+  templateName: 
+  description: 
+  preview: {fileID: 0}
+  dependencies:
+  - dependency: {fileID: 2800000, guid: 4a1359289f9ddfc4a868bf2fde024046, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 3756e61abfae50a41ad91bd915bd83c1, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 6ebca564027e82345a014b90357e3930, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 1074615768905427138, guid: c6c0eeb76599ee148807ea1c5709bca1, type: 3}
+    instantiationMode: 0
+  templatePipeline: {fileID: 0}
+  addToDefaults: 0

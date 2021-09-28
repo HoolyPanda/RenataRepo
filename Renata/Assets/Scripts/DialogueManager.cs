@@ -96,7 +96,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
-        
     }
     void test()
     {
