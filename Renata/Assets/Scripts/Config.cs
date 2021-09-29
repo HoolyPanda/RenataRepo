@@ -8,12 +8,12 @@ public class Config : MonoBehaviour
     
     public class config
     {
-        public bool isLastPhrase;
-        public string[] conditionstrings;
-        public string[] preStatChanges;
-        public string[] postStatChanges;
-        
-        public string[] inventoryAdd;
+        public bool isLastPhrase = false;
+        public string[] conditionstrings = new string[] {};
+        public string[] preStatChanges = new string[] {};
+        public string[] postStatChanges = new string[] {};
+        public string[] exclusiveConditions = new string[] {};
+        public string[] inventoryAdd = new string[] {};
     }
     [SerializeField]
     public config CFG;

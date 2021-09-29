@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (!isPostDialogueChangesDone)
                 {
+                    // if (config.)
                     foreach (string condLine in config.postStatChanges)
                     {
                         string data = condLine.Split( new [] {"change "}, System.StringSplitOptions.None)[1];
@@ -181,43 +182,63 @@ public class DialogueManager : MonoBehaviour
             {
                 if (isConfigLoaded)
                 {
-                    foreach (string condLine in config.conditionstrings)
+                    // var mmmm = config.exclusiveConditions.Length;
+                    if (config.exclusiveConditions.Length > 0)
                     {
-                        string optionName = condLine.Split( new [] {" if "}, System.StringSplitOptions.None)[0];
-                        string c = condLine.Split( new [] {" if "}, System.StringSplitOptions.None)[1];
-                        string[] d = c.Split(' ');
-                        string targetParamName = d[0];
-                        string comparationRule = d[1];
-                        int targetValue = (int)char.GetNumericValue(d[2].ToCharArray()[0]);
-                        var a = player.GetComponent<Player>();
-                        if (item == optionName)
+                        foreach (string condLine in config.exclusiveConditions)
                         {
-                            if (comparationRule == ">")
-                            {
-                                if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) > (float)targetValue))
-                                {   
-                                    passSpawn = true;
-                                }
+                            string exclusiveCondition = condLine.Split( new [] {"only "}, System.StringSplitOptions.None)[1];
+                            string optionName = exclusiveCondition.Split( new [] {" if "}, System.StringSplitOptions.None)[0];
+                            string targetParamName = exclusiveCondition.Split( new [] {" if "}, System.StringSplitOptions.None)[1];
+
+                            var a = player.GetComponent<Player>();
+                            
+                            if (((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) == 4.0f) && item != optionName)
+                            {   
+                                passSpawn = true;
                             }
-                            else if (comparationRule == "<")
+                        }
+                    }
+                    else
+                    {
+                        foreach (string condLine in config.conditionstrings)
+                        {
+                            string optionName = condLine.Split( new [] {" if "}, System.StringSplitOptions.None)[0];
+                            string c = condLine.Split( new [] {" if "}, System.StringSplitOptions.None)[1];
+                            string[] d = c.Split(' ');
+                            string targetParamName = d[0];
+                            string comparationRule = d[1];
+                            int targetValue = (int)char.GetNumericValue(d[2].ToCharArray()[0]);
+                            var a = player.GetComponent<Player>();
+                            if (item == optionName)
                             {
-                                if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) < (float)targetValue))
-                                {   
-                                    passSpawn = true;
+                                if (comparationRule == ">")
+                                {
+                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) > (float)targetValue))
+                                    {   
+                                        passSpawn = true;
+                                    }
                                 }
-                            }
-                            else if (comparationRule == ">=")
-                            {
-                                if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) >= (float)targetValue))
-                                {   
-                                    passSpawn = true;
+                                else if (comparationRule == "<")
+                                {
+                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) < (float)targetValue))
+                                    {   
+                                        passSpawn = true;
+                                    }
                                 }
-                            }
-                            else if (comparationRule == "<=")
-                            {
-                                if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) <= (float)targetValue))
-                                {   
-                                    passSpawn = true;
+                                else if (comparationRule == ">=")
+                                {
+                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) >= (float)targetValue))
+                                    {   
+                                        passSpawn = true;
+                                    }
+                                }
+                                else if (comparationRule == "<=")
+                                {
+                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) <= (float)targetValue))
+                                    {   
+                                        passSpawn = true;
+                                    }
                                 }
                             }
                         }

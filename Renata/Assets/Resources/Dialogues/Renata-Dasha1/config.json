@@ -1,17 +1,16 @@
 {
     "isLastPhrase": false,
     "conditionstrings": [
-        "Ответить грубо if revolt > 2",
-        "Ответить вежливо if words > 0"
-    ],
-    "preStatChanges": [
-        "change apathyAgressionMood +3",
-        "change silenceWordsMood +1"
-    ],
-    "postStatChanges": [
         
     ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+        "change apathyAgressionMood -7"
+    ],
+    "exclusiveConditions": [
+        "only Ответить грубо if agression"
+    ],
     "inventoryAdd": [
-        "add test1"
     ]
 }

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/RentataDashaTEST.unity
+- path: Assets/RenataDashaMansion.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

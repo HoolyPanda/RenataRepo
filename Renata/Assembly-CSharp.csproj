@@ -90,6 +90,7 @@
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить вежливо\Промолчать\init.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\silent\rude\init.txt" />
+     <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить грубо\Даша.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Промолчать\Ответить вежливо\Dasha.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\silent\silent\init.txt" />
@@ -108,6 +109,7 @@
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\polite\silent\init.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\Dasha.txt" />
+     <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить грубо\Рената.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить вежливо\Ответить вежливо\Даша.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Промолчать\renata.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -127,9 +129,9 @@
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Прощание\Даша.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\polite\Renata.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\polite\rude\init.txt" />
-     <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить грубо\init.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\polite\polite\Dasha.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ссора\Даша.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить вежливо\Промолчать\renata.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Промолчать\Ответить грубо\init.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Рената.txt" />
@@ -143,6 +145,7 @@
      <None Include="Assets\Resources\Dialogues\Renata-Dasha2\silent\rude\renata.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Промолчать\Промолчать\init.txt" />
+     <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ссора\Рената.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Промолчать\test1\Dasha.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить вежливо\Ответить грубо\init.txt" />
      <None Include="Assets\Resources\Dialogues\Renata-Dasha1\Ответить вежливо\test\Рената.txt" />
@@ -716,34 +719,34 @@
         <HintPath>D:\Unity\2020.3.19f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>D:\Unity\Renata\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>D:\Unity\RenataRepo\Renata\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

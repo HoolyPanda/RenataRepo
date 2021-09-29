@@ -157,42 +157,55 @@ public class Player : MonoBehaviour
     }
     public void ChangeapathyAgressionMoodBy(float val)
     {
-        this.apathyAgressionMood += val;
-        agression = apathyAgressionMood;
-        apathy = -apathyAgressionMood;
-        agressionLabel.text = agression.ToString();
-        apathyLabel.text = apathy.ToString();
-        this.statsValChanged = true;
+        if ( Mathf.Abs(apathyAgressionMood + val) <= 4)
+        {
+            this.apathyAgressionMood += val;
+            agression = apathyAgressionMood;
+            apathy = -apathyAgressionMood;
+            agressionLabel.text = agression.ToString();
+            apathyLabel.text = apathy.ToString();
+            this.statsValChanged = true;
+        }
     }
     public void ChangesilenceWordsMoodBy(float val)
     {
-        this.silenceWordsMood += val;
-        words = silenceWordsMood;
-        silence = -silenceWordsMood;
-        wordsLabel.text = words.ToString();
-        silenceLabel.text = silence.ToString();
-        this.statsValChanged = true;
+        if ( Mathf.Abs(silenceWordsMood + val) <= 4)
+        {
+            this.silenceWordsMood += val;
+            words = silenceWordsMood;
+            silence = -silenceWordsMood;
+            wordsLabel.text = words.ToString();
+            silenceLabel.text = silence.ToString();
+            this.statsValChanged = true;
+        }
     }
     public void ChangesubmissionRevoltMoodBy(float val)
     {
-        this.submissionRevoltMood += val;
-        revolt = submissionRevoltMood;
-        submission = -submissionRevoltMood;
-        revoltLabel.text = revolt.ToString();
-        submissionLabel.text = submission.ToString();
-        this.statsValChanged = true;
+        if ( Mathf.Abs(submissionRevoltMood + val) <= 4)
+        {
+            this.submissionRevoltMood += val;
+            revolt = submissionRevoltMood;
+            submission = -submissionRevoltMood;
+            revoltLabel.text = revolt.ToString();
+            submissionLabel.text = submission.ToString();
+            this.statsValChanged = true;
+        }
     }
     public void ChangetrustParanoiaMoodBy(float val)
     {
-        this.trustParanoiaMood += val;
-        trust = trustParanoiaMood;
-        paranoia = -trustParanoiaMood;
-        trustLabel.text = trust.ToString();
-        paranoiaLabel.text = paranoia.ToString();
-        this.statsValChanged = true;
+        if ( Mathf.Abs(trustParanoiaMood + val) <= 4)
+        {
+            this.trustParanoiaMood += val;
+            trust = trustParanoiaMood;
+            paranoia = -trustParanoiaMood;
+            trustLabel.text = trust.ToString();
+            paranoiaLabel.text = paranoia.ToString();
+            this.statsValChanged = true;
+        }
     }
     public void AddDialogueOption(string value)
     {   
+        
         if (!dialogueOptions.Contains(value))
         {
             dialogueOptions.Add(value);
