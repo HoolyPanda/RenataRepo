@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   templateScene: {fileID: 102900000, guid: c8347d4e637e7ce4e8c749c6baec58bc, type: 3}
   templateName: 
-  description: 
+  description: dfasfsafsafdsagfdgdgfgdfgfd!
   preview: {fileID: 0}
   dependencies:
   - dependency: {fileID: 2800000, guid: 4a1359289f9ddfc4a868bf2fde024046, type: 3}

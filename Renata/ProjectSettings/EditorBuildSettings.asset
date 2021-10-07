@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/SampleScene.unity
     guid: c8347d4e637e7ce4e8c749c6baec58bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/RenataDashaMansion.unity
     guid: 1fdc30ec15645a8489c93dbbd8cc24c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/RentataDashaTEST.unity
     guid: 172096954d927f64a91dc722874d6f7a
+  - enabled: 1
+    path: Assets/Mansion.unity
+    guid: 138001c8c5ed36a4e898084530a29b2a
   m_configObjects: {}

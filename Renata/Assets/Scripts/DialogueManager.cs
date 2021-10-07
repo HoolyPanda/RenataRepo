@@ -120,7 +120,6 @@ public class DialogueManager : MonoBehaviour
     }
     bool OptionAvalibleForPlayer(string optionName, string[] options, string currentDir)
     {
-        // TODO баг с появлением кнопок из инвентаря, если нет папок
         foreach (var item in options)
         {
             var i = item.Substring(currentDir.Length+1);
@@ -135,7 +134,7 @@ public class DialogueManager : MonoBehaviour
     {
         config = null;
         isConfigLoaded = false;
-        var dialogueOptions = player.GetComponent<Player>().dialogueOptions;
+        var dialogueOptions = player.GetComponent<Player>().stats.dialogueOptions;
         string dialoguesDir = Application.dataPath+"/Resources/Dialogues/"+dialogueFolderPath;
         var OptionsDir = Directory.GetDirectories(dialoguesDir, "*", SearchOption.TopDirectoryOnly);
         var tmpfiles = Directory.GetFiles(dialoguesDir);
@@ -193,7 +192,7 @@ public class DialogueManager : MonoBehaviour
 
                             var a = player.GetComponent<Player>();
                             
-                            if (((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) == 4.0f) && item != optionName)
+                            if (((float)typeof(Player.s).GetField(targetParamName).GetValue(player.GetComponent<Player>().stats) == 4.0f) && item != optionName)
                             {   
                                 passSpawn = true;
                             }
@@ -214,28 +213,28 @@ public class DialogueManager : MonoBehaviour
                             {
                                 if (comparationRule == ">")
                                 {
-                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) > (float)targetValue))
+                                    if (!((float)typeof(Player.s).GetField(targetParamName).GetValue(player.GetComponent<Player>().stats) > (float)targetValue))
                                     {   
                                         passSpawn = true;
                                     }
                                 }
                                 else if (comparationRule == "<")
                                 {
-                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) < (float)targetValue))
+                                    if (!((float)typeof(Player.s).GetField(targetParamName).GetValue(player.GetComponent<Player>().stats) < (float)targetValue))
                                     {   
                                         passSpawn = true;
                                     }
                                 }
                                 else if (comparationRule == ">=")
                                 {
-                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) >= (float)targetValue))
+                                    if (!((float)typeof(Player.s).GetField(targetParamName).GetValue(player.GetComponent<Player>().stats) >= (float)targetValue))
                                     {   
                                         passSpawn = true;
                                     }
                                 }
                                 else if (comparationRule == "<=")
                                 {
-                                    if (!((float)typeof(Player).GetField(targetParamName).GetValue(player.GetComponent<Player>()) <= (float)targetValue))
+                                    if (!((float)typeof(Player.s).GetField(targetParamName).GetValue(player.GetComponent<Player>().stats) <= (float)targetValue))
                                     {   
                                         passSpawn = true;
                                     }
@@ -282,3 +281,4 @@ public class DialogueManager : MonoBehaviour
         currentDialogueDir = dialogueFolderPath;
     }
 }
+// fdsafasfas
