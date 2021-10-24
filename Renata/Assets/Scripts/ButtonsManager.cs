@@ -6,7 +6,7 @@ using UnityEngine;
 public class ButtonsManager : MonoBehaviour
 {
 
-    public ScriptableObject dButton;
+    // public ScriptableObject dButton;
     public GameObject prefab;
     void Start()
     {
@@ -37,11 +37,21 @@ public class ButtonsManager : MonoBehaviour
         }
         var c = buttonName;
         GameObject b = Instantiate(prefab) as GameObject;
+        // GameObject b = new GameObject();
+        // button.transform.parent = panel;
+        // b.AddComponent<RectTransform>();
+        // b.AddComponent<UnityEngine.UI.Button>();
+        // b.AddComponent<UnityEngine.UI.Text>();
         b.name = buttonName;
-        b.transform.SetParent(this.transform);
+        // b.GetComponent<RectTransform>().localScale = new Ve(1,1,1);
+        b.transform.SetParent(this.transform, false);
         b.GetComponentInChildren<UnityEngine.UI.Text>().text = buttonText;
         SetAction(b.GetComponent<UnityEngine.UI.Button>(), action, actionPayload);
         return b;
     }
-
+    public void DeleteButtons()
+    {
+        GameObject[] buttons = this.GetComponentsInChildren<GameObject>();
+        var b = 0;
+    }
 }

@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SampleScene.unity
-    guid: c8347d4e637e7ce4e8c749c6baec58bc
-  - enabled: 0
-    path: Assets/RenataDashaMansion.unity
-    guid: 1fdc30ec15645a8489c93dbbd8cc24c7
-  - enabled: 0
-    path: Assets/RentataDashaTEST.unity
-    guid: 172096954d927f64a91dc722874d6f7a
+    path: Assets/RenataRoom.unity
+    guid: 373c00aed6e753948b9634f55d575f4a
   - enabled: 1
-    path: Assets/Mansion.unity
-    guid: 138001c8c5ed36a4e898084530a29b2a
+    path: Assets/Location1.unity
+    guid: ca660063689a6be4f8c214643345fc8d
+  - enabled: 1
+    path: Assets/Location2.unity
+    guid: 3d8fa223f6082fc4fa6725f7be07c16e
+  - enabled: 1
+    path: Assets/Location3.unity
+    guid: 04e224dfe9554274484c0f02f5da9b69
+  - enabled: 1
+    path: Assets/DadRoom.unity
+    guid: 2393fc2fff4759948a2f7c859cb25f4e
   m_configObjects: {}

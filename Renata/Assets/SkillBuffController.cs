@@ -14,6 +14,11 @@ public class SkillBuffController : MonoBehaviour
     {
         skillName = parentPanel.name;
         images = this.gameObject.GetComponentsInChildren<UnityEngine.UI.Image>();
+        if (player == null)
+        {
+            var a = GameObject.FindGameObjectWithTag("Player");
+            player = a;
+        }
     }
 
     void Update()

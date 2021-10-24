@@ -18,5 +18,5 @@ public class SliderController : MonoBehaviour
     {
         this.target.GetComponent<Player>().HandleMoodValueChanges(this.name, val);
     }
-
+// fdsafasd
 }

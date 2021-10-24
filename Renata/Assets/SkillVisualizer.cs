@@ -15,6 +15,10 @@ public class SkillVisualizer : MonoBehaviour
         skillName = parentPanel.name;
         images = this.gameObject.GetComponentsInChildren<UnityEngine.UI.Image>();
         // if (player.GetComponent<Player>().stats != null)
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
         // {   
         skillLevel = player.GetComponent<Player>().GetStatByName(skillName);
         for (int i = 1; i-1 <= 3; i++)

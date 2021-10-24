@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Reflection;
+using UnityEngine.EventSystems;
+// using UnityEngine.Ta
 // fdasfdsafasd
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
 {
     public class s
     {
         public string[] dialogueOptions; 
+        public string[] tmpOptions;
         public float apathyAgressionMood = 0;
 
         public float silenceWordsMood = 0;
@@ -55,12 +58,14 @@ public class Player : MonoBehaviour
     public UnityEngine.UI.Text submissionLabel;
     public UnityEngine.UI.Text trustLabel;
     public UnityEngine.UI.Text paranoiaLabel;
+    public Camera theCamera;
+    public string dialogue;
 
     public void Start()
     {
         stats = new s();
         Load();
-        
+        theCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     public s Load()
@@ -74,6 +79,7 @@ public class Player : MonoBehaviour
 
     public bool Save()
     {
+        this.stats.tmpOptions = new string[]{};
         string dialoguesDir = Application.dataPath+"/Saves/"+this.name;
         string[] a = JsonUtility.ToJson(this.stats, true).Split('\n');
         File.WriteAllText(dialoguesDir, JsonUtility.ToJson(this.stats, true));
@@ -139,6 +145,22 @@ public class Player : MonoBehaviour
             }
             statsValChanged = false;
         }
+        // Ray cameraRay = theCamera.ScreenPointToRay(Input.mousePosition);
+        // if (Physics.Raycast(cameraRay, out RaycastHit2D hit))
+        // {
+        //     Debug.Log("Clicked on " + hit.collider.name);
+        // }
+        // if (Input.GetMouseButtonDown(0)) {
+        //     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+        //     RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+        //     if (hit.collider != null) {
+        //         Debug.Log(hit.collider.gameObject.name);
+        //         hit.collider.attachedRigidbody.AddForce(Vector2.up);
+        //     }
+        // }
+
     }
     
     void LoadSprite(string spritename)
@@ -173,7 +195,6 @@ public class Player : MonoBehaviour
     }
     public bool SetStatByName(string name, float val)
     {
-        // TODO internal finction to get stats
         float statCap = 4;
         System.Reflection.FieldInfo myTypeInfo = typeof(s).GetField(name);
         if ((float)myTypeInfo.GetValue(this.stats) + val < statCap)
@@ -384,11 +405,103 @@ public class Player : MonoBehaviour
         List<string> tmp = new List<string>();
         foreach (var item in stats.dialogueOptions)
         {
-            if (!tmp.Contains(value))
+
+            if (!tmp.Contains(item))
             {
-                tmp.Add(value);
+                tmp.Add(item);
             }    
         }
-
+        if (!tmp.Contains(value))
+        {
+            tmp.Add(value);
+        }
+        stats.dialogueOptions = tmp.ToArray();
     }
+    public void AddTmpDialogueOption(string value)
+    {   
+        List<string> tmp = new List<string>();
+        foreach (var item in stats.tmpOptions)
+        {
+
+            if (!tmp.Contains(item))
+            {
+                tmp.Add(item);
+            }    
+        }
+        if (!tmp.Contains(value))
+        {
+            tmp.Add(value);
+        }
+        stats.tmpOptions = tmp.ToArray();
+    }
+    public void InteractiveChangeApathyAgressionMoodBy(float val)
+    {
+        if (Mathf.Abs(stats.apathyAgressionMood) < 4)
+        {
+            if ( Mathf.Abs(stats.apathyAgressionMood + val) <= 4)
+            {
+                this.stats.apathyAgressionMood += val;
+                stats.agression = stats.apathyAgressionMood;
+                stats.apathy = -stats.apathyAgressionMood;
+                agressionLabel.text = stats.agression.ToString();
+                apathyLabel.text = stats.apathy.ToString();
+                this.statsValChanged = true;
+            }
+        }
+    }
+
+    public void InteractiveChangesilenceWordsMoodBy(float val)
+    {
+        if (Mathf.Abs(stats.silenceWordsMood) < 4)
+        {
+            if ( Mathf.Abs(stats.silenceWordsMood + val) <= 4)
+            {
+                this.stats.silenceWordsMood += val;
+                stats.words = stats.silenceWordsMood;
+                stats.silence = -stats.silenceWordsMood;
+                wordsLabel.text = stats.words.ToString();
+                silenceLabel.text = stats.silence.ToString();
+                this.statsValChanged = true;
+            }
+        }
+    }
+
+    public void InteractiveChangesubmissionRevoltMoodBy(float val)
+    {
+        if (Mathf.Abs(stats.submissionRevoltMood) < 4)
+        {
+            if ( Mathf.Abs(stats.submissionRevoltMood + val) <= 4)
+            {
+                this.stats.submissionRevoltMood += val;
+                stats.revolt = stats.submissionRevoltMood;
+                stats.submission = -stats.submissionRevoltMood;
+                revoltLabel.text = stats.revolt.ToString();
+                submissionLabel.text = stats.submission.ToString();
+                this.statsValChanged = true;
+            }
+        }
+    }
+
+    public void InteractiveChangetrustParanoiaMoodBy(float val)
+    {
+        if (Mathf.Abs(stats.trustParanoiaMood) < 4)
+        {
+            if ( Mathf.Abs(stats.trustParanoiaMood + val) <= 4)
+            {
+                this.stats.trustParanoiaMood += val;
+                stats.trust = stats.trustParanoiaMood;
+                stats.paranoia = -stats.trustParanoiaMood;
+                trustLabel.text = stats.trust.ToString();
+                paranoiaLabel.text = stats.paranoia.ToString();
+                this.statsValChanged = true;
+            }
+        }
+    }
+
+//     public void OnPointerClick(PointerEventData eventData)
+//    {
+//       Debug.Log("Clicked");
+//    }
+
+
 }

@@ -9,7 +9,10 @@ public class InteractableObject : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        
+       if (player == null) 
+       {
+           player = GameObject.FindGameObjectWithTag("Player");
+       }
     }
 
     // Update is called once per frame

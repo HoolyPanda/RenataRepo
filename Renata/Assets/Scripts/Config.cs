@@ -14,6 +14,7 @@ public class Config : MonoBehaviour
         public string[] postStatChanges = new string[] {};
         public string[] exclusiveConditions = new string[] {};
         public string[] inventoryAdd = new string[] {};
+        public string[] inventoryAddTmp = new string[] {};
     }
     [SerializeField]
     public config CFG;

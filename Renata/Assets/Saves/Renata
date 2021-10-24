@@ -1,11 +1,17 @@
 {
-    "dialogueOptions": [],
-    "apathyAgressionMood": 3.0,
+    "dialogueOptions": [
+        "Ответить вежливо",
+        "Ответить грубо",
+        "Промолчать",
+        "Апатия"
+    ],
+    "tmpOptions": [],
+    "apathyAgressionMood": 0.0,
     "silenceWordsMood": 0.0,
     "submissionRevoltMood": 0.0,
     "trustParanoiaMood": 0.0,
-    "agression": 3.0,
-    "apathy": -3.0,
+    "agression": 0.0,
+    "apathy": 0.0,
     "words": 0.0,
     "silence": 0.0,
     "revolt": 0.0,
@@ -16,7 +22,7 @@
     "Courtesy": 1.0,
     "Lies": 0.0,
     "Endurance": 0.0,
-    "Dexterity": 0.0,
+    "Dexterity": 2.0,
     "Exposure": 0.0,
     "Fight": 0.0,
     "Power": 0.0,
@@ -29,5 +35,5 @@
     "Intuition": 0.0,
     "Patriotism": 0.0,
     "currentState": "",
-    "skillPoints": 1
+    "skillPoints": 0.0
 }

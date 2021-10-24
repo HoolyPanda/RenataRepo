@@ -1,0 +1,16 @@
+{
+    "isLastPhrase": true,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+    ],
+    "exclusiveConditions": [
+
+    ],
+    "inventoryAddTmp": [
+        "add ФОТОРАМКА"
+    ]
+}

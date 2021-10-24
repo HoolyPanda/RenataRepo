@@ -6,6 +6,7 @@ public class DialogueBoxManager : MonoBehaviour
 {
     public GameObject textBoxPanel;
     public GameObject buttonsPanel;
+    public GameObject exitButton;
     public GameObject renataPanel;
     public GameObject npcPanel;
     public Text text;
@@ -23,6 +24,7 @@ public class DialogueBoxManager : MonoBehaviour
     Button politeButton;
     Button rudeButton;
     Button silentButton;
+
     IEnumerator TextScroll (string textLine)
     {
         int letter = 0;
@@ -59,6 +61,13 @@ public class DialogueBoxManager : MonoBehaviour
                     currentLine -= 1;
                     if (turnOnDialogueOption)
                     {
+                        UnityEngine.UI.Button[] blist = buttonsPanel.GetComponentsInChildren<UnityEngine.UI.Button>();
+                        foreach (UnityEngine.UI.Button item in blist)
+                        {
+                            item.interactable = true;   
+                            // item.
+                            var s = false;
+                        }
                         buttonsPanel.SetActive(true);
                     }
                     DM.PhraseEnded();
@@ -103,24 +112,33 @@ public class DialogueBoxManager : MonoBehaviour
         }
         textBoxPanel.SetActive(true);
         buttonsPanel.SetActive(false);
+        exitButton.SetActive(true);
     }
     public void TurnOffDialogue()
     {
         dialogueEnabled = false;
         textBoxPanel.SetActive(false);
-        buttonsPanel.SetActive(false);
+        exitButton.SetActive(false);
+        // buttonsPanel.SetActive(false);
         renataPanel.SetActive(false);
         npcPanel.SetActive(false);
         text.text = "...";
         isTyping = false;
         cancelTyping = false;
     }
-    public void LoadDialogieAsset(TextAsset newText, string speaker, bool isLastPhrase)
+    // public void LoadDialogieAsset(TextAsset newText, string speaker, bool isLastPhrase)
+    // {
+    //     Phrase phrase= new Phrase(newText, speaker);
+    //     phrases.Add(phrase);
+    // }
+    public void LoadDialogieAsset(DialogueManager.Phrase phrase, bool isLastPhrase)
     {
         TurnOffButtons();
         isTyping = false;
         cancelTyping = false;
         lastLine = 0;
+        TextAsset newText = phrase.phraseText;
+        string speaker = phrase.speakerName;
         turnOnDialogueOption = isLastPhrase;
         if (newText != null)
         {
@@ -141,11 +159,13 @@ public class DialogueBoxManager : MonoBehaviour
             npcPanel.GetComponentInChildren<Text>().text = speaker;
             npcPanel.SetActive(true);
             renataPanel.SetActive(false);
+            text.text = "...";
         }
         else
         {
             renataPanel.SetActive(true);
             npcPanel.SetActive(false);
+            text.text = "...";
         }
     }
     public void TurnOnButtons()
@@ -154,6 +174,22 @@ public class DialogueBoxManager : MonoBehaviour
     }
     public void TurnOffButtons()
     {
-        this.buttonsPanel.SetActive(false);
+        // this.buttonsPanel.SetActive(false);
+    }
+    public void DeleteButtons()
+    {
+        var buttons = buttonsPanel.GetComponentsInChildren<UnityEngine.UI.Button>();
+        foreach ( var b in  buttons)
+        {
+            
+            Destroy(b.gameObject);
+            var mm = 0; 
+        }
+    }
+    public int getOptionsLen()
+    {
+        var buttons = buttonsPanel.GetComponentsInChildren<UnityEngine.UI.Button>();
+        return buttons.Length;
+
     }
 }

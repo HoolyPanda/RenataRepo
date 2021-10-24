@@ -1240,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPanel: {fileID: 3998522722827998305}
   player: {fileID: 0}
+  button: {fileID: 3998522723931854901}
 --- !u!1 &3998522723982153260
 GameObject:
   m_ObjectHideFlags: 0

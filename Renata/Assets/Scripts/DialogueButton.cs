@@ -5,11 +5,16 @@ using UnityEngine;
 public class DialogueButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject DManager;
+    public DialogueManager DManager;
     public string DFolder;
     void Start()
     {
         // gameObject.GetComponent<Button>().onClick.AddListener();
+        if (DManager == null)
+        {
+            DManager = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponentInChildren<DialogueManager>();
+            var b = 0;
+        }
     }
 
     // Update is called once per frame
@@ -20,6 +25,6 @@ public class DialogueButton : MonoBehaviour
     public void StartDialogue()
     {
         // var a = DManager.GetComponent<Canvas>();
-        DManager.GetComponent<DialogueManager>().StartDialogue(DFolder);
+        DManager.StartDialogue(DFolder);
     }
 }

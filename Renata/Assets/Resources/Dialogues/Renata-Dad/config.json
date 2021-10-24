@@ -1,0 +1,17 @@
+{
+    "isLastPhrase": false,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+    ],
+    "exclusiveConditions": [
+    ],
+    "inventoryAdd": [
+        "add Ответить Агресивно",
+        "add Ответить Аппатично",
+        "add Ответить Многословно"
+    ]
+}
