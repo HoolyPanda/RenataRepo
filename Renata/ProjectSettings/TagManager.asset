@@ -8,6 +8,8 @@ TagManager:
   - SaveO
   - DialogueCanvas
   - DialogueTrigger
+  - DialogueManager
+  - Stats
   layers:
   - Default
   - TransparentFX

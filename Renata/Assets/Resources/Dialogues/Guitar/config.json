@@ -1,0 +1,16 @@
+{
+    "isLastPhrase": true,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+        "change apathyAgressionMood -1"
+    ],
+    "exclusiveConditions": [
+
+    ],
+    "inventoryAddTmp": [
+    ]
+}

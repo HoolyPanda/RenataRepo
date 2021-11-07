@@ -13,5 +13,6 @@
     "inventoryAdd": [
     ],
     "inventoryAddTmp": [
-    ]
+    ],
+    "SpriteAssetToLoad": "Angry"
 }

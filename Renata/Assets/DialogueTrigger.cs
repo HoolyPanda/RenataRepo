@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     // Start is called before the first frame update
     public string dialogue;
     public GameObject targetGO;
+    public DialogueManager DM;
     void Start()
     {
         
@@ -17,6 +18,19 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void OnMouseUp()
     {
+        try
+        {
+            DM = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>();
+             
+        }
+        catch (System.Exception)
+        {
+            
+        }
+        if (DM != null)
+        {
+            DM.NPCGO = targetGO;
+        }
         if (!GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Canvas>().enabled)
         {
             if (dialogue != null)

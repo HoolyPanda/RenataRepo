@@ -163,12 +163,20 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
 
     }
     
-    void LoadSprite(string spritename)
+    public void LoadSprite(string spritename)
     {
         // var a  = string.Format("Sprites/{0}/{0}_{1}", this.name, spritename);
-        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(string.Format("Sprites/{0}/{0}_{1}", this.name, spritename));
-    }
+        var sprite = Resources.Load<Sprite>(string.Format("Sprites/{0}/{0}_{1}", this.name, spritename));
 
+        if (sprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        else
+        {
+            Debug.LogError("NO SUCH SPRITE " + string.Format("Sprites/{0}/{0}_{1}", this.name, spritename));
+        }
+    }
     public float GetStatByName(string name)
     {
         if (stats != null)
@@ -443,9 +451,9 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
                 this.stats.apathyAgressionMood += val;
                 stats.agression = stats.apathyAgressionMood;
                 stats.apathy = -stats.apathyAgressionMood;
+                this.statsValChanged = true;
                 agressionLabel.text = stats.agression.ToString();
                 apathyLabel.text = stats.apathy.ToString();
-                this.statsValChanged = true;
             }
         }
     }
@@ -459,9 +467,9 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
                 this.stats.silenceWordsMood += val;
                 stats.words = stats.silenceWordsMood;
                 stats.silence = -stats.silenceWordsMood;
+                this.statsValChanged = true;
                 wordsLabel.text = stats.words.ToString();
                 silenceLabel.text = stats.silence.ToString();
-                this.statsValChanged = true;
             }
         }
     }
@@ -475,9 +483,9 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
                 this.stats.submissionRevoltMood += val;
                 stats.revolt = stats.submissionRevoltMood;
                 stats.submission = -stats.submissionRevoltMood;
+                this.statsValChanged = true;
                 revoltLabel.text = stats.revolt.ToString();
                 submissionLabel.text = stats.submission.ToString();
-                this.statsValChanged = true;
             }
         }
     }
@@ -491,9 +499,9 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
                 this.stats.trustParanoiaMood += val;
                 stats.trust = stats.trustParanoiaMood;
                 stats.paranoia = -stats.trustParanoiaMood;
+                this.statsValChanged = true;
                 trustLabel.text = stats.trust.ToString();
                 paranoiaLabel.text = stats.paranoia.ToString();
-                this.statsValChanged = true;
             }
         }
     }

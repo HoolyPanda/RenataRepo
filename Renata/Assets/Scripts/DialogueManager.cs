@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialogueCanvas;
     public TextAsset initNPCPhrase;
     public string NPCName;
+    public GameObject NPCGO;
     public TextAsset initRenataPhrase;
     public string currentDialogueDir;
     public GameObject buttonsList;
@@ -298,6 +299,10 @@ public class DialogueManager : MonoBehaviour
                     {
                         player.GetComponent<Player>().ChangetrustParanoiaMoodBy((float)modificationVal);
                     }                    
+                }
+                if (config.SpriteAssetToLoad != "")
+                {
+                    NPCGO.GetComponent<Player>().LoadSprite(config.SpriteAssetToLoad);
                 }
                 isConfigLoaded = true;
             }
