@@ -4,6 +4,8 @@ using UnityEngine;
 using System.IO;
 using System.Reflection;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 // using UnityEngine.Ta
 // fdasfdsafasd
 public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
@@ -66,6 +68,11 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
         stats = new s();
         Load();
         theCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        if (GameObject.FindGameObjectWithTag("DialogueCanvas"))
+        {
+            //transform.SetParent(GameObject.FindGameObjectWithTag("DialogueCanvas").transform.GetChild(0).transform);
+        }
     }
 
     public s Load()
@@ -170,7 +177,7 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
 
         if (sprite != null)
         {
-            GetComponent<SpriteRenderer>().sprite = sprite;
+            GetComponent<Image>().sprite = sprite;
         }
         else
         {

@@ -45,7 +45,7 @@ public class ButtonsManager : MonoBehaviour
         b.name = buttonName;
         // b.GetComponent<RectTransform>().localScale = new Ve(1,1,1);
         b.transform.SetParent(this.transform, false);
-        b.GetComponentInChildren<UnityEngine.UI.Text>().text = buttonText;
+        b.GetComponentInChildren<TMPro.TMP_Text>().text = buttonText;
         SetAction(b.GetComponent<UnityEngine.UI.Button>(), action, actionPayload);
         return b;
     }

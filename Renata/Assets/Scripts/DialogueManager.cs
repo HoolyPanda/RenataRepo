@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 // using UnityEngine.Windows;
 using System.IO;
 public class DialogueManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject boxManager;
-    public Canvas dialogueCanvas;
+    public GameObject dialogueCanvas;
     public TextAsset initNPCPhrase;
     public string NPCName;
     public GameObject NPCGO;
@@ -44,7 +45,7 @@ public class DialogueManager : MonoBehaviour
            player = GameObject.FindGameObjectWithTag("Player");
        }
     }
-    void Update()
+    void Update() 
     {
         // TODO rewrite... sometime
         if (player.GetComponent<Player>().stats != null)
@@ -209,6 +210,7 @@ public class DialogueManager : MonoBehaviour
         }
         // if 
     }
+
     void test()
     {
         Debug.Log("TEst");
@@ -226,7 +228,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PhraseEnded()
     {
-        dialogueCanvas.enabled = true;
+        dialogueCanvas.SetActive(true);
         phraseLoaded = false;
         phraseEnded = true;
         if (boxManager.GetComponent<DialogueBoxManager>().getOptionsLen() == 0)
@@ -248,8 +250,9 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(string dialogueFolderPath)
     {
+        Debug.Log("StartDialogue");
         config = null;
-        player.GetComponent<SpriteRenderer>().enabled = true;
+        player.GetComponent<Image>().enabled = true;
         // if (GameObject.FindGameObjectWithTag("NPC").GetComponent<SpriteRenderer>().sprite != null)
         // {
         //     GameObject.FindGameObjectWithTag("NPC").GetComponent<SpriteRenderer>().enabled = true;   
@@ -407,12 +410,12 @@ public class DialogueManager : MonoBehaviour
         if (initRenataPhrase != null)
         {
             isCurrentPraseFromRenata = true;
-            dialogueCanvas.enabled = true;
+            dialogueCanvas.SetActive(true);
             // boxManager.GetComponent<DialogueBoxManager>().LoadDialogieAsset(initRenataPhrase, "Рената", false);
         }
         else if (initNPCPhrase != null && initRenataPhrase == null)
         {
-            dialogueCanvas.enabled = true;
+            dialogueCanvas.SetActive(true);
             isCurrentPraseFromRenata = false;
             // boxManager.GetComponent<DialogueBoxManager>().LoadDialogieAsset(initNPCPhrase, NPCName, true);
         }
@@ -421,9 +424,10 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         boxManager.GetComponent<DialogueBoxManager>().TurnOffDialogue();
-        player.GetComponent<SpriteRenderer>().enabled =false;
-        GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Canvas>().enabled = false;
-        GameObject.FindGameObjectWithTag("NPC").GetComponent<SpriteRenderer>().enabled = false;
+        player.GetComponent<Image>().enabled =false;
+        GameObject.FindGameObjectWithTag("DialogueCanvas").transform.GetChild(0).gameObject.SetActive(false);
+        GameObject.FindGameObjectWithTag("NPC").GetComponent<Image>().enabled = false;
+        this.currentDialogueDir = "";
     }
 }
 // fdsafasfas

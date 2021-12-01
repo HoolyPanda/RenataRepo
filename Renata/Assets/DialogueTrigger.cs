@@ -1,47 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
     public string dialogue;
     public GameObject targetGO;
     public DialogueManager DM;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
-    public void OnMouseUp()
+
+    private void Start()
     {
         try
         {
-            DM = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>();
-             
+            //DM = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>(); 
+            DM = FindObjectOfType<DialogueManager>();
         }
         catch (System.Exception)
         {
-            
         }
-        if (DM != null)
+
+        if (DM != null && targetGO !=null)
         {
             DM.NPCGO = targetGO;
         }
-        if (!GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Canvas>().enabled)
+        if (!GameObject.FindGameObjectWithTag("DialogueCanvas")) 
         {
             if (dialogue != null)
             {
                 if (targetGO != null)
                 {
-                    targetGO.GetComponent<SpriteRenderer>().enabled = true;
-                }    
-                GameObject.FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    //targetGO.GetComponent<Image>().enabled = true;
+                }
+                //DM.StartDialogue(dialogue);
             }
-
+        }
+    }
+    public void OnMouseUp()
+    {
+        if (DM.currentDialogueDir == "")
+        {
+            DM.StartDialogue(dialogue);
+            if (targetGO != null)
+            {
+                targetGO.GetComponent<Image>().enabled = true;
+            }
         }
     }
 }

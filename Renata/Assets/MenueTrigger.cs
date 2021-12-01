@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MenueTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
     public string dialogue;
     public GameObject targetGO;
-    public Canvas statsCanvas;
-    public GameObject statsPanel;
+    public GameObject statsCanvas;
+    //public GameObject statsPanel;
     public bool isStatsPanelEnabled = false;
     void Start()
     {
-        
-    }
-    void Update()
-    {
-        
+        if (statsCanvas == null)
+        {
+            Debug.LogError("No stats object");
+        }
     }
     public void OnMouseUp()
     {
-        try
+/*        try
         {
             statsCanvas = GameObject.FindGameObjectWithTag("Stats").GetComponent<Canvas>();
 
@@ -29,10 +27,11 @@ public class MenueTrigger : MonoBehaviour
         catch (System.Exception)
         {
             
-        }
+        }*/
+
         if (statsCanvas != null && !isStatsPanelEnabled)
         {
-            statsCanvas.enabled = true;
+            statsCanvas.SetActive(true);
             isStatsPanelEnabled = true;
             // DM.NPCGO = targetGO;
         }
@@ -40,7 +39,7 @@ public class MenueTrigger : MonoBehaviour
     }
     public void DisableStatsCanvas()
     {
-        statsCanvas.enabled = false;
+        statsCanvas.SetActive(false);
         isStatsPanelEnabled = false;
         
     }

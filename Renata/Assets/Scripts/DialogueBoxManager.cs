@@ -2,28 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class DialogueBoxManager : MonoBehaviour
 {
+    [Header("UI Objects")]
     public GameObject textBoxPanel;
     public GameObject buttonsPanel;
     public GameObject exitButton;
     public GameObject renataPanel;
     public GameObject npcPanel;
-    public Text text;
-    public TextAsset textSource;
-    public TextAsset seckondTextSource;
-    public string[] textLines;
-    public int currentLine;
-    public int lastLine;
-    bool dialogueEnabled = true;
-    bool isTyping = false;
-    bool cancelTyping = false;
-    public float typeSpeed = 0.15f;
-    public bool turnOnDialogueOption = false;
-    public DialogueManager DM;
+    public TMPro.TMP_Text text;
     Button politeButton;
     Button rudeButton;
     Button silentButton;
+    public GameObject DialogueItemsParent;
+    [Space]
+    public string[] textLines;
+    public int currentLine;
+    public int lastLine;
+
+    bool dialogueEnabled = true;
+    bool isTyping = false;
+    bool cancelTyping = false;
+
+    public float typeSpeed = 0.15f;
+    public bool turnOnDialogueOption = false;
+    public DialogueManager DM;
+
+    public TextAsset textSource;
+    public TextAsset seckondTextSource;
 
     IEnumerator TextScroll (string textLine)
     {
@@ -117,14 +125,16 @@ public class DialogueBoxManager : MonoBehaviour
     public void TurnOffDialogue()
     {
         dialogueEnabled = false;
-        textBoxPanel.SetActive(false);
-        exitButton.SetActive(false);
-        // buttonsPanel.SetActive(false);
-        renataPanel.SetActive(false);
-        npcPanel.SetActive(false);
         text.text = "...";
         isTyping = false;
         cancelTyping = false;
+
+        DialogueItemsParent.SetActive(false);
+        //textBoxPanel.SetActive(false);
+        //exitButton.SetActive(false);
+        //buttonsPanel.SetActive(false);
+        //renataPanel.SetActive(false);
+        //npcPanel.SetActive(false);
     }
     // public void LoadDialogieAsset(TextAsset newText, string speaker, bool isLastPhrase)
     // {
