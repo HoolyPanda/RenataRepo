@@ -184,6 +184,20 @@ public class Player : MonoBehaviour//,IPointerDownHandler,IPointerClickHandler
             Debug.LogError("NO SUCH SPRITE " + string.Format("Sprites/{0}/{0}_{1}", this.name, spritename));
         }
     }
+    
+    public void LoadSpriteByName(string spritename)
+    {
+        var sprite = Resources.Load<Sprite>(string.Format("Sprites/{0}/{1}", this.name, spritename));
+
+        if (sprite != null)
+        {
+            GetComponent<Image>().sprite = sprite;
+        }
+        else
+        {
+            Debug.LogError("NO SUCH SPRITE " + string.Format("Sprites/{0}/{1}", this.name, spritename));
+        } 
+    }
     public float GetStatByName(string name)
     {
         if (stats != null)

@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DadRoom.unity
     guid: 2393fc2fff4759948a2f7c859cb25f4e
+  - enabled: 1
+    path: Assets/DetPriem1.unity
+    guid: 3b36d2c8a494de2489845ab0be899dac
+  - enabled: 1
+    path: Assets/DetPriem2.unity
+    guid: e64d843e74231c241b869eb9e5957492
+  - enabled: 1
+    path: Assets/DetPriem3.unity
+    guid: 3901a34428870f347942445c183a5b41
   m_configObjects: {}

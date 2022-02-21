@@ -15,6 +15,8 @@ public class Config : MonoBehaviour
         public string[] exclusiveConditions = new string[] {};
         public string[] inventoryAdd = new string[] {};
         public string[] inventoryAddTmp = new string[] {};
+        public string[] targetSpriteToLoad = new string[] {};
+        public string[] changeTargetDialogue = new string[] {};
         public string SpriteAssetToLoad = "";
     }
     [SerializeField]

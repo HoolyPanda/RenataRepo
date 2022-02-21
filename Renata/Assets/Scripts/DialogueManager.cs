@@ -44,6 +44,7 @@ public class DialogueManager : MonoBehaviour
        {
            player = GameObject.FindGameObjectWithTag("Player");
        }
+        
     }
     void Update() 
     {
@@ -305,6 +306,21 @@ public class DialogueManager : MonoBehaviour
                 }
                 if (config.SpriteAssetToLoad != "")
                 {
+                    NPCGO.GetComponent<Player>().LoadSprite(config.SpriteAssetToLoad);
+                }
+                if (config.targetSpriteToLoad.Length != 0)
+                {
+                    foreach (string line in config.targetSpriteToLoad)
+                    {
+                        string[] c = line.Split(' ');
+                        string targetGOName = c[0];
+                        string targetGOSprite = c[1];
+                        Debug.Log(targetGOName);
+                        Debug.Log(targetGOSprite);
+                        var target = GameObject.Find(targetGOName);
+                        target.GetComponent<Player>().LoadSpriteByName(targetGOSprite);
+                        var b = 0;
+                    }
                     NPCGO.GetComponent<Player>().LoadSprite(config.SpriteAssetToLoad);
                 }
                 isConfigLoaded = true;

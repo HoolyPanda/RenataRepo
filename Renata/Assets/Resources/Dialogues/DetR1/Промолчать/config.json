@@ -1,0 +1,18 @@
+{
+    "isLastPhrase": true,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+    ],
+    "exclusiveConditions": [
+
+    ],
+    "inventoryAddTmp": [
+    ],
+    "targetSpriteToLoad":[
+        "Дима Dima_Apathy"
+    ]
+}
