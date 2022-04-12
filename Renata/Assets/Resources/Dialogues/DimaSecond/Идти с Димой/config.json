@@ -1,0 +1,20 @@
+{
+    "isLastPhrase": true,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+    ],
+    "exclusiveConditions": [
+
+    ],
+    "inventoryAddTmp": [
+    ],
+    "changeTargetDialogue":[
+     
+    ],
+    "targetSpriteToLoad":[
+    ]
+}

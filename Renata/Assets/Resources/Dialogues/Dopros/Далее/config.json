@@ -1,0 +1,19 @@
+{
+    "isLastPhrase": false,
+    "conditionstrings": [
+        
+    ],
+    "preStatChanges": [
+    ],
+    "postStatChanges": [
+    ],
+    "exclusiveConditions": [
+
+    ],
+    "inventoryAddTmp": [
+    ],
+    "targetSpriteToLoad":[
+    "Учитель Teacher_Word",
+    "Страж BigNKVD_AgressiaPNG"
+    ]
+}

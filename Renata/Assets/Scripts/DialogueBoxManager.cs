@@ -13,6 +13,7 @@ public class DialogueBoxManager : MonoBehaviour
     public GameObject renataPanel;
     public GameObject npcPanel;
     public TMPro.TMP_Text text;
+    GameObject prevSpeaker = null;
     Button politeButton;
     Button rudeButton;
     Button silentButton;
@@ -125,11 +126,34 @@ public class DialogueBoxManager : MonoBehaviour
     public void TurnOffDialogue()
     {
         dialogueEnabled = false;
-        text.text = "...";
+        try
+        {
+            
+            text.text = "...";
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
         isTyping = false;
         cancelTyping = false;
 
         DialogueItemsParent.SetActive(false);
+
+        try
+        {
+            if (this.prevSpeaker != null)
+            {
+                prevSpeaker.GetComponent<Image>().enabled = false;
+
+            }
+            // prevSpeaker = null;    
+        }
+        catch (System.Exception)
+        { 
+            throw;
+        }
         //textBoxPanel.SetActive(false);
         //exitButton.SetActive(false);
         //buttonsPanel.SetActive(false);
@@ -166,6 +190,19 @@ public class DialogueBoxManager : MonoBehaviour
         }
         if (speaker != "Рената")
         {
+            int b = 0;
+            GameObject currentNPCSpeaker = GameObject.Find(speaker);
+            if (prevSpeaker != null)
+            {
+                prevSpeaker.GetComponent<Image>().enabled = false;
+                prevSpeaker = currentNPCSpeaker;
+                prevSpeaker.GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                    prevSpeaker = currentNPCSpeaker;
+                    prevSpeaker.GetComponent<Image>().enabled = true;
+            }
             npcPanel.GetComponentInChildren<Text>().text = speaker;
             npcPanel.SetActive(true);
             renataPanel.SetActive(false);
@@ -185,6 +222,15 @@ public class DialogueBoxManager : MonoBehaviour
     public void TurnOffButtons()
     {
         // this.buttonsPanel.SetActive(false);
+    }
+    public void TurnOffSpeakerImage()
+    {
+        if (this.prevSpeaker != null)
+        {
+            
+            prevSpeaker.GetComponent<Image>().enabled = false;
+            int b = 0;
+        }
     }
     public void DeleteButtons()
     {

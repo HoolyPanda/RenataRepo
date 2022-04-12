@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DetPriem3.unity
     guid: 3901a34428870f347942445c183a5b41
+  - enabled: 1
+    path: Assets/Location1 1.unity
+    guid: 2b0f1834b0af43d4da4b5aedd883768e
+  - enabled: 1
+    path: Assets/Location21.unity
+    guid: 879d7901c109df84c9dd1ecbd5e94e43
   m_configObjects: {}

@@ -615,6 +615,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7926951513575594496, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
   m_PrefabInstance: {fileID: 720034459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1638126348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7926951513575594503, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
+  m_PrefabInstance: {fileID: 1688284024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1638126349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638126348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d897aa9f01dea458ccd501f692ea55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1649096842
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,15 +816,15 @@ PrefabInstance:
       objectReference: {fileID: 1649096842}
     - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_Size.x
-      value: 3.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
-      propertyPath: m_Size.y
       value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
+      propertyPath: m_Size.y
+      value: 4.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_Offset.y
@@ -815,15 +832,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.67
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594498, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.52
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594503, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_Name
-      value: DialogueTriggerKupanie
+      value: DialogueTriggerDima
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594509, guid: aac3595aa97a03f4d87ebbea4b1eb5b4, type: 3}
       propertyPath: m_Sprite
@@ -986,7 +1003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3223612724582340907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.17, y: 0.26, z: 0}
   m_LocalScale: {x: 1.2788, y: 1.2788, z: 1.2788}
   m_Children: []
   m_Father: {fileID: 3223612724738325777}
@@ -1054,7 +1071,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 20.202478, y: 10.985644}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1775,7 +1792,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Location2
+          m_StringArgument: DetPriem3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &3223612725743018205
@@ -1831,7 +1848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3223612725853756318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,7 +2079,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DadRoom
+          m_StringArgument: DetPriem2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!224 &3223612726087188501

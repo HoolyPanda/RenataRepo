@@ -8,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     public string dialogue;
     public GameObject targetGO;
     public DialogueManager DM;
+    public string LoadScene; 
+    public ScenesManager SM;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             //DM = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>(); 
             DM = FindObjectOfType<DialogueManager>();
+            SM = FindObjectOfType<ScenesManager>();
         }
         catch (System.Exception)
         {
@@ -45,6 +48,10 @@ public class DialogueTrigger : MonoBehaviour
             {
                 targetGO.GetComponent<Image>().enabled = true;
             }
+        }
+        if (LoadScene != "")
+        {
+            SM.LoadSceneByName(LoadScene);
         }
     }
 }

@@ -17,6 +17,7 @@ public class Config : MonoBehaviour
         public string[] inventoryAddTmp = new string[] {};
         public string[] targetSpriteToLoad = new string[] {};
         public string[] changeTargetDialogue = new string[] {};
+        // public string[] changeTargetDialogue = new string[] {};
         public string SpriteAssetToLoad = "";
     }
     [SerializeField]

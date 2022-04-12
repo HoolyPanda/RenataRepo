@@ -188,7 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594497, guid: b9621866af1fd9e4faaf7e1411b1d427, type: 3}
       propertyPath: dialogue
-      value: Door
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926951513575594497, guid: b9621866af1fd9e4faaf7e1411b1d427, type: 3}
+      propertyPath: LoadScene
+      value: DetPriem2
       objectReference: {fileID: 0}
     - target: {fileID: 7926951513575594498, guid: b9621866af1fd9e4faaf7e1411b1d427, type: 3}
       propertyPath: m_Size.x

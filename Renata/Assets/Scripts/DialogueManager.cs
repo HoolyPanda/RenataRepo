@@ -131,6 +131,14 @@ public class DialogueManager : MonoBehaviour
                             player.GetComponent<Player>().AddTmpDialogueOption(data);
 
                         }
+                        foreach (string condLine in config.changeTargetDialogue)
+                        {
+                            string data = condLine.Split( new [] {" "}, System.StringSplitOptions.None)[1];
+
+                            var b = 0;
+                            // player.GetComponent<Player>().AddTmpDialogueOption(data);
+
+                        }
                     }
                     isPostDialogueChangesDone = true;
                 }
@@ -157,6 +165,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (phraseEnded && !phraseLoaded && !buttonsLoaded)
         {
+            boxManager.GetComponent<DialogueBoxManager>().TurnOffSpeakerImage();
             boxManager.GetComponent<DialogueBoxManager>().TurnOnButtons();
             buttonsLoaded = true;
             var b =0 ;
@@ -203,6 +212,27 @@ public class DialogueManager : MonoBehaviour
                             string data = condLine.Split( new [] {"add "}, System.StringSplitOptions.None)[1];
 
                             player.GetComponent<Player>().AddTmpDialogueOption(data);
+
+                        }
+                        foreach (string condLine in config.changeTargetDialogue)
+                        {
+                            string newDialogueName = condLine.Split( new [] {" "}, System.StringSplitOptions.None)[1];
+                            string TargetTrigger = condLine.Split( new [] {" "}, System.StringSplitOptions.None)[0];
+                            var targetO = GameObject.Find(TargetTrigger);
+                            if (targetO != null)
+                            {
+                                
+                                DialogueObject DO = targetO.GetComponent<DialogueObject>();
+                                if (DO != null)
+                                {
+
+                                    DO.stats.dialogue = newDialogueName;
+                                    targetO.GetComponent<DialogueTrigger>().dialogue = newDialogueName;
+                                    DO.Save();
+                                } 
+                            }
+                            var b = 0;
+                            // player.GetComponent<Player>().AddTmpDialogueOption(data);
 
                         }
                 EndDialogue();
@@ -306,7 +336,12 @@ public class DialogueManager : MonoBehaviour
                 }
                 if (config.SpriteAssetToLoad != "")
                 {
+                    if (NPCGO == null && NPCName != "")
+                    {
+                        NPCGO = GameObject.Find(NPCName);
+                    }
                     NPCGO.GetComponent<Player>().LoadSprite(config.SpriteAssetToLoad);
+
                 }
                 if (config.targetSpriteToLoad.Length != 0)
                 {
@@ -320,6 +355,10 @@ public class DialogueManager : MonoBehaviour
                         var target = GameObject.Find(targetGOName);
                         target.GetComponent<Player>().LoadSpriteByName(targetGOSprite);
                         var b = 0;
+                    }
+                    if (NPCGO == null && NPCName != "")
+                    {
+                        NPCGO = GameObject.Find(NPCName);
                     }
                     NPCGO.GetComponent<Player>().LoadSprite(config.SpriteAssetToLoad);
                 }
@@ -397,9 +436,16 @@ public class DialogueManager : MonoBehaviour
             }
             if (!passSpawn)
             {
-                buttonsList.GetComponentInChildren<ButtonsManager>().CreateButton(item, item, HandleButtonPressed, item);
+                var b = item;
+                var x = buttonsList.GetComponentInChildren<ButtonsManager>().CreateButton(item, item, HandleButtonPressed, item);
+                var c = buttonsList.GetComponentInChildren<ButtonsManager>();
+                var m = 0;
             }
-            passSpawn = false;
+            else
+            {
+                var b = item;
+            }
+            // passSpawn = false;
             // }
         }
         foreach (var item in tmpfiles)

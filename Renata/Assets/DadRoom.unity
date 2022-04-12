@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 1649096844}
   - component: {fileID: 1649096843}
   m_Layer: 0
-  m_Name: Dad
+  m_Name: "\u041E\u0442\u0435\u0446"
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
